@@ -8,14 +8,19 @@ const menuItemRoutes=require("./routes/menuItemRoutes");
 app.use('/person',personRoutes);
 app.use('/menuitem',menuItemRoutes);
 
+require('dotenv').config();
+
+
+const PORT=process.env.PORT || 3000;
+
 
 app.get('/', function (req, res) {
   res.send('Hello World!!  This my first server with Nodejs');
 })
 
 
-app.listen(3000,()=>{
-  console.log("listening on port 3000");
+app.listen(PORT,()=>{
+  console.log(`listening on port ${PORT}`);
 })
 
 
